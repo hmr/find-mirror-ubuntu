@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# vim: set noet syn=bash ft=sh ff=unix fenc=utf-8 ts=2 sw=0 : # GPP default modeline for zsh script
+# shellcheck shell=bash disable=SC1091,SC2155,SC3010,SC3021,SC3037 source=${GPP_HOME}
+
 if [[ $# -lt 3 ]]; then
   echo "Usage: $0 <arch> <dist> <repo> [<filename>]"
   echo
@@ -152,6 +155,8 @@ function speed_test () {
 
   url_pathname="dists/$DIST/Contents-${ARCH}.gz"
   count2=1
+
+  TMP=${url_pathname}
 
   echo "Checking download speed." > /dev/stderr
   echo "Mirror sites to check: ${lines}" > /dev/stderr
