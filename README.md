@@ -4,7 +4,7 @@ The tool searches for Ubuntu Linux mirror repositories accessible via APT, check
 
 ## Key features
 
-- Gets <ins>up-to-date mirror list</ins> by checking launchpad.net
+- Generates <ins>up-to-date mirror list</ins> by checking launchpad.net
 - Checks all mirror sites for the <ins>existence of the **architecture** and **version**</ins> you entered.
 - Checks not only `ubuntu` directory <ins>but also `ubuntu-ports` directory</ins>.
 - Checks <ins>download speed</ins> by downloading `"Contents-<ARCH>.gz"` file.
@@ -52,11 +52,7 @@ Fetching mirror list from 'https://launchpad.net/ubuntu/+archivemirrors' Done. T
 [1/784] https://mirrors.dc.clear.net.ar/ubuntu/
 [2/784] http://mirrors.dc.clear.net.ar/ubuntu/
 [3/784] https://mirror.sitsa.com.ar/ubuntu/
-[4/784] http://mirror.sitsa.com.ar/ubuntu/
-[5/784] http://mirrors.eze.sysarmy.com/ubuntu/
-(snip)
-[780/784] http://mirrors.bkns.vn/ubuntu/
-[781/784] http://mirrors.vhost.vn/ubuntu/
+...
 [782/784] http://mirror.clearsky.vn/ubuntu/
 [783/784] http://mirrors.nhanhoa.com/ubuntu/
 [784/784] http://opensource.xtdv.net/ubuntu/
@@ -68,12 +64,7 @@ Idx     URL     Speed(MiB/s)
 1 http://buaya.klas.or.id/ubuntu-ports/ 8.2
 2 http://free.nchc.org.tw/ubuntu-ports/ 7.9
 3 http://ftp.fau.de/ubuntu-ports/ 2.5
-4 http://ftp.lanet.kr/ubuntu-ports/ 13.8
-5 http://ftp.tsukuba.wide.ad.jp/ubuntu-ports/ 12.0
-(snip)
-86 https://repo.jing.rocks/ubuntu-ports/ 14.3
-87 https://sby.mirror.bignet.id/ubuntu-ports/ 0
-88 https://ubuntu-mirror.cloud.mu/ubuntu-ports/ 1.6
+...
 89 https://ubuntu-ports.mirror.net.in/ 5.2
 90 https://ubuntu-ports.mirror.net.in/ubuntu-ports/ 3.6
 91 https://ubuntu.anexia.at/ubuntu-ports/ 3.4
