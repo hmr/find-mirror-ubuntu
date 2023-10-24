@@ -4,11 +4,11 @@ The tool searches for Ubuntu Linux mirror repositories accessible via APT, check
 
 ## Key features
 
-- Gets **up-to-date** mirror list by checking launchpad.net
+- Gets <ins>up-to-date mirror list</ins> by checking launchpad.net
 - Checks all mirror sites for the <ins>existence of the **architecture** and **version**</ins> you entered.
-- Checks not only "ubuntu" directory but also <ins>"ubuntu-ports" directory</ins>.
-- Checks download speed by downloading "Contents-<ARCH>.gz" file.
-- Outputs the list of repositories that you can 'apt update / upgrade / install' by writing into '/etc/apt/sources.list'.
+- Checks not only `ubuntu` directory <ins>but also `ubuntu-ports` directory</ins>.
+- Checks <ins>download speed</ins> by downloading `"Contents-<ARCH>.gz"` file.
+- Outputs the list of repositories that <ins>you can `apt update / upgrade / install`</ins> by writing into `/etc/apt/sources.list`.
 
 ## Usage
 
@@ -16,9 +16,9 @@ The tool searches for Ubuntu Linux mirror repositories accessible via APT, check
 
 where
 
-- ARCH: Architecture type. e.g. amd64, i386, arm64 and so on.
-- CODE NAME: Codename of the release. e.g. focal, jammy, lunar, mantic and so on.
-- REPO TYPE: One of {main, restricted, universe, multiverse}.
+- ARCH: Architecture type. e.g. `amd64`, `i386`, `arm64` and so on.
+- CODE NAME: Codename of the release. e.g. `focal`, `jammy`, `lunar`, `mantic` and so on.
+- REPO TYPE: One of {`main`, `restricted`, `universe`, `multiverse`}.
 - mirror file: Filename of the mirror list. (optional)
 
 ### Make an up-to-date mirror list
