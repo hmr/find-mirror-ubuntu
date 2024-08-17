@@ -249,7 +249,7 @@ function speed_test () {
   echo "Num of mirror sites to check: ${lines}" > /dev/stderr
   echo "Arch: ${ARCH}, Dist: ${DIST}, Repo: ${REPO}" > /dev/stderr
   # echo "Idx URL Speed(MiB/s) Orig_date Mirror_date"
-  echo "Idx URL Speed(MiB/s) Diff"
+	echo "Idx URL Speed(MiB/s) Delay(sec)"
   while read -r url; do
 		echo -n "$((lines - count2 + 1)) " > /dev/stderr
     echo -n "${count2} "
