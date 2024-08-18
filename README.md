@@ -33,17 +33,41 @@ where
 ### Make an up-to-date mirror list
 
 ```console
-$ ./find-mirror-ubuntu.bash riscv64 noble main | (read -r header && echo "$header" && sort -k 4n -k 3nr) | column -t | tee mirror-list.txt
+$ ./find-mirror-ubuntu.bash riscv64 noble main | (read -r header && echo "$header" && sort -k 4n -k 3nr) | column -t | tee mirrorlist.txt
 ```
 
 This displays a list of mirrors which is ordered by delay and download speed from ports.ubuntu.com. The higher the line means smaller mirroring delay and faster download speed.
+
+#### Practical way
+
+ßMake some mirror lists by the command above and aggregate by the command below:
+
+```console
+$ grep -P "\s0$" mirrorlist*.txt | awk '{count[$2]++; sum[$2]+=$3} END {for (key in count) print count[key], key, sum[key]/count[key]}' | sort -nr | column -t
+8  https://mirror.coganng.com/ubuntu-ports/                 13.05
+8  https://jp.mirror.coganng.com/ubuntu-ports/              13.5125
+8  https://in.mirror.coganng.com/ubuntu-ports/              7.2
+8  http://ports.ubuntu.com/ubuntu-ports/                    9.1
+8  http://ports.ubuntu.com/                                 8.5875
+8  http://mirror.coganng.com/ubuntu-ports/                  10.5625
+8  http://jp.mirror.coganng.com/ubuntu-ports/               13.7125
+8  http://in.mirror.coganng.com/ubuntu-ports/               7.2375
+4  http://plug-mirror.rcac.purdue.edu/ubuntu-ports/         8.2
+4  http://kambing.uu.sg/ubuntu/                             14.85
+4  http://kambing.uu.sg/ubuntu-ports/                       13.275
+3  https://mirror.twds.com.tw/ubuntu/                       19.4
+3  https://mirror.twds.com.tw/ubuntu-ports/                 19.0333
+.....
+```
+
+This command deletes the 1st column
 
 ### Get Verbose output
 
 Set `DEBUG` envitonment variable and you'll get verbose (debug) information.
 
 ```console
-$ DEBUG=1 ./find-mirror-ubuntu.bash riscv64 noble main | (read -r header && echo "$header" && sort -k 4n -k 3nr) | column -t | tee mirror-list.txt
+$ DEBUG=1 ./find-mirror-ubuntu.bash riscv64 noble main | (read -r header && echo "$header" && sort -k 4n -k 3nr) | column -t | tee mirrorlist.txt
 ```
 You can get more verbose output by `DEBUG=2`
 
