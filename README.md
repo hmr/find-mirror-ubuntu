@@ -40,10 +40,10 @@ This displays a list of mirrors which is ordered by delay and download speed fro
 
 #### Practical way
 
-ßMake some mirror lists by the command above and aggregate by the command below:
+Make some mirror lists by the command above and aggregate by the command below:
 
 ```console
-$ grep -P "\s0$" mirrorlist*.txt | awk '{count[$2]++; sum[$2]+=$3} END {for (key in count) print count[key], key, sum[key]/count[key]}' | sort -nr | column -t
+$ for file in mirrorlist*.txt; do tail -n +2 $file; done | awk '{counts[$2]++; sum3[$2]+=$3; sum4[$2]+=$4} END {for (k in counts) print k, counts[k], sum3[k]/counts[k], sum4[k]/counts[k]}' | sort -k 2nr -k 4n -k 3nr | column -t
 8  https://mirror.coganng.com/ubuntu-ports/                 13.05
 8  https://jp.mirror.coganng.com/ubuntu-ports/              13.5125
 8  https://in.mirror.coganng.com/ubuntu-ports/              7.2
@@ -60,7 +60,7 @@ $ grep -P "\s0$" mirrorlist*.txt | awk '{count[$2]++; sum[$2]+=$3} END {for (key
 .....
 ```
 
-This command deletes the 1st column
+This command removes the 1st column, count the mirror site url, and calculate the avarage download speed. The upper row means more frequent update and faster download speed.
 
 ### Get Verbose output
 
